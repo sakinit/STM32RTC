@@ -188,6 +188,30 @@ void STM32RTC::setPrediv(int8_t predivA, int16_t predivS)
 }
 
 /**
+  * @brief Return RTC Calibration value
+  *        This function returns the calibration value.
+  * @retval the RTC Clock Calibration value
+  */
+uint32_t STM32RTC::getCalib()
+{
+  return RTC_getCalib();
+}
+
+/**
+  * @brief RTC Calibration
+  *        This function calibrates the RTC (See AN2604 Application note).
+  *        By default the calibration is set to 0.
+  * @note  Call after begin() as the backup domain might get reset
+  * @param minusPulsesValue: specifies the RTC Clock Calibration value
+  * @retval None
+  */
+void STM32RTC::setCalib(uint32_t minusPulsesValue)
+{
+  RTC_setCalib(minusPulsesValue);
+}
+
+
+/**
   * @brief enable the RTC alarm.
   * @param match: Alarm_Match configuration
   * @retval None

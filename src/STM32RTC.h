@@ -179,6 +179,9 @@ public:
   void getPrediv(int8_t *predivA, int16_t *predivS);
   void setPrediv(int8_t predivA, int16_t predivS);
 
+  uint32_t getCalib();
+  void setCalib(uint32_t minusPulsesValue);
+
   bool isConfigured(void) {
     return _configured;
   }
