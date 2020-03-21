@@ -759,7 +759,8 @@ void STM32RTC::setDate(uint8_t weekDay, uint8_t day, uint8_t month, uint8_t year
     if(IS_RTC_YEAR(year)) {
       _year = year;
     }
-    RTC_SetDate(_year, _month, _day, _wday);  }
+    RTC_SetDate(_year, _month, _day, _wday);
+  }
 }
 
 /**
@@ -891,7 +892,7 @@ void STM32RTC::setAlarmYear(uint8_t year)
 
 /**
   * @brief  set RTC alarm date.
-  * @NOTE   Parameters month and year are ingored because the STM32 RTC can't
+  * @NOTE   Parameters month and year are ignored because the STM32 RTC can't
   *         assign a month or year to an alarm. See board datasheet.
   * @param  day: 1-31
   * @param  month is ignored
