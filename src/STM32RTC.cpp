@@ -210,6 +210,15 @@ void STM32RTC::setCalib(uint32_t minusPulsesValue)
   RTC_setCalib(minusPulsesValue);
 }
 
+/**
+  * @brief  Returns the rtc peripheral clock frequency
+  * @note   Returns 0 if rtc peripheral clock is unknown (e.g. clock is not configured)
+  * @retval Frequency in Hz (0: means that no available frequency for the peripheral)
+  */
+uint32_t STM32RTC::getDefaultClockFrequency()
+{
+  return _configured ? RTC_getDefaultClockFrequency() : 0U;
+}
 
 /**
   * @brief enable the RTC alarm.

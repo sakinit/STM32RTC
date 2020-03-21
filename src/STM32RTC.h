@@ -182,6 +182,8 @@ public:
   uint32_t getCalib();
   void setCalib(uint32_t minusPulsesValue);
 
+  uint32_t getDefaultClockFrequency();
+
   bool isConfigured(void) {
     return _configured;
   }
